@@ -91,3 +91,11 @@ Template: avada
 .category-nav__link:hover {
   text-decoration: underline;
 }
+
+.blog-headline {
+  color: #000;
+  font-size: 32px;
+  font-family: "times new roman" serif;
+  font-weight: 100;
+  text-align: center;
+}
