@@ -84,7 +84,8 @@ Template: avada
 }
 
 .category-nav__entry {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  width: 25%;
 }
 
 .category-nav__link:hover {
