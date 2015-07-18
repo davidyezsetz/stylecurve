@@ -106,7 +106,7 @@ echo sprintf( '<div id="posts-container" class="%sfusion-blog-archive fusion-cle
       $category_detail=get_the_category( get_the_ID() );//$post->ID
       $categories = "cat-";
       foreach($category_detail as $cd){
-        $categories .= $cd->cat_name . " ";
+        $categories .= $cd->slug . " ";
       }
 			if ( $blog_layout == 'grid' ) {
 				echo '<div class="fusion-post-wrapper ' . $categories .'">';
