@@ -46,6 +46,18 @@ if ( is_search() &&
 	$number_of_pages = $wp_query->max_num_pages;
 }
 
+echo '<h1 class="blog-headline">fashion news</h1>';
+// Add category nav
+echo '<nav class="category-nav__wrapper"><ul class="category-nav">';
+$cat_args = array('hide_empty' => 0);
+foreach(get_categories($cat_args) as $cat) {
+    if ($cat->cat_name == 'Allgemein' || $cat->cat_name == 'featured') {
+    } else {
+        echo '<li class="category-nav__entry"><a class="category-nav__link" href="' . get_category_link($cat->term_id) . '">' . $cat->cat_name . '</a></li>';
+   }
+}
+echo '</ul></nav>';
+
 echo sprintf( '<div id="posts-container" class="%sfusion-blog-archive fusion-clearfix" data-pages="%s">', $container_class, $number_of_pages );
 
 	if( $blog_layout == 'timeline' ) {
