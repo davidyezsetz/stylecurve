@@ -66,4 +66,7 @@ Template: avada
   color: #fff !important;
   line-height: 32px;
 }
-~
+
+#posts-container.fusion-blog-layout-grid .fusion-post-grid {
+  height: 400px;
+}
