@@ -57,3 +57,13 @@ Template: avada
 .cat-the-shoot:hover:after {
   opacity: 1;
 }
+
+.fusion-load-more-button {
+  margin: auto;
+  width: 145px;
+  height: 31px;
+
+  color: #fff !important;
+  line-height: 32px;
+}
+~
