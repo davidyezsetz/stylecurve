@@ -175,9 +175,11 @@ echo sprintf( '<div id="posts-container" class="%sfusion-blog-archive fusion-cle
 							 *
 							 * @hooked avada_render_blog_post_content - 10 (outputs the post content wrapped with a container)
 							 */						
+            echo '<a href="' . get_permalink( get_the_ID() ) . '">';
 							do_action( 'avada_blog_post_content' );
+						echo ' </a>';
 							
-						echo '</div>';
+						echo ' ></div>';
 				
 					echo '</div>'; // end post-content
 					
