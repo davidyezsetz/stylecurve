@@ -7,3 +7,29 @@ Template: avada
 .fusion-blog-layout-grid .fusion-post-wrapper {
   border: none;
 }
+
+.fusion-blog-layout-grid .fusion-meta-info {
+  display: none;
+}
+
+.fusion-blog-layout-grid .fusion-post-content-wrapper {
+  padding-top: 15px;
+}
+
+.fusion-blog-layout-grid .fusion-post-content {
+  text-align: center;
+}
+
+.fusion-blog-layout-grid .fusion-single-line-meta {
+  margin-bottom: 0;
+}
+
+.fusion-blog-layout-grid .fusion-post-content-container {
+  margin-top: 0;
+}
+
+.fusion-blog-layout-grid .entry-title {
+  margin-bottom: 10px;
+
+  text-transform: uppercase;
+}
