@@ -103,8 +103,13 @@ echo sprintf( '<div id="posts-container" class="%sfusion-blog-archive fusion-cle
 		
 		echo sprintf( '<div id="post-%s" %s>', get_the_ID(), $post_classes );
 			// Add an additional wrapper for grid layout border
+      $category_detail=get_the_category( get_the_ID() );//$post->ID
+      $categories = "cat-";
+      foreach($category_detail as $cd){
+        $categories .= $cd->cat_name . " ";
+      }
 			if ( $blog_layout == 'grid' ) {
-				echo '<div class="fusion-post-wrapper">';
+				echo '<div class="fusion-post-wrapper ' . $categories .'">';
 			}
 			
 				// Get featured images for all but large-alternate layout
