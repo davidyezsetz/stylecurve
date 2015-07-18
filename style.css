@@ -4,3 +4,6 @@ Description: Stylecurve child theme for Avada theme
 Author: David Setz
 Template: avada
 */
+.fusion-blog-layout-grid .fusion-post-wrapper {
+  border: none;
+}
