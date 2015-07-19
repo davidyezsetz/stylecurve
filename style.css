@@ -164,3 +164,7 @@ Template: avada
 .fusion-secondary-main-menu {
   display: none;
 }
+
+#main {
+  padding-top: 15px !important;
+}
