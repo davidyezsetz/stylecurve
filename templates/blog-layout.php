@@ -72,9 +72,10 @@ echo sprintf( '<div id="posts-container" class="%sfusion-blog-archive fusion-cle
 		echo '<div class="fusion-timeline-line"></div>';
 	}
 
-	// Start the main loop
-	while ( have_posts() ): the_post();
-		// Set the time stamps for timeline month/year check
+  // Start the main loop
+  $new_query = new WP_Query( 'cat=-13' );
+  while ( $new_query->have_posts() ): $new_query->the_post();
+    // Set the time stamps for timeline month/year check
 		$alignment_class = '';
 		if( $blog_layout == 'timeline' ) {
 			$post_timestamp = get_the_time( 'U' );
