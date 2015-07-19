@@ -106,3 +106,61 @@ Template: avada
   font-weight: 100;
   text-align: center;
 }
+
+@media screen and (min-width: 760px) {
+
+  .featured-post {
+    position: relative;
+
+    margin-bottom: 50px;
+    padding-bottom: 33.125%;
+    height: 0;
+
+    color: #000;
+  }
+
+  .featured-post__content {
+    position: relative;
+    z-index: 2;
+    top: 10px;
+    left: 60%;
+  }
+
+  .featured-post__headline {
+    font-size: 40px;
+    font-family: "times new roman" serif;
+  }
+
+  .featured-post__subline {
+    font-size: 21px;
+    font-family: "times new roman" serif;
+  }
+
+ .featured-post__excerpt {
+    font-size: 16px;
+    font-family: arial, sans-serif;
+  }
+
+  .featured-post__editor {
+    font-size: 16px;
+    font-family: arial, sans-serif;
+  }
+
+  .featured-post .wp-post-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .featured-post__content {
+    top: 70px;
+  }
+}
+
+.fusion-secondary-main-menu {
+  display: none;
+}
