@@ -106,8 +106,7 @@ echo sprintf( '<div id="posts-container" class="%sfusion-blog-archive fusion-cle
 	}
 
   // Start the main loop
-  $new_query = new WP_Query( 'cat=-13,-14,-15' );
-  while ( $new_query->have_posts() ): $new_query->the_post();
+  while ( $wp_query->have_posts() ): $wp_query->the_post();
     // Set the time stamps for timeline month/year check
 		$alignment_class = '';
 		if( $blog_layout == 'timeline' ) {
