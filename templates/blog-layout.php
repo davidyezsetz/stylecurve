@@ -46,6 +46,37 @@ if ( is_search() &&
 	$number_of_pages = $wp_query->max_num_pages;
 }
 
+// Add featured post
+$feature_cat;
+switch (ICL_LANGUAGE_CODE) {
+  case 'de':
+    $feature_cat = 'cat=13';
+    break;
+  case 'fr':
+    $feature_cat = 'cat=14';
+    break;
+  case 'en':
+    $feature_cat = 'cat=15';
+    break;
+}
+// posts_per_page
+$feature_query = new WP_Query( $feature_cat );
+while ( $feature_query->have_posts() ): $feature_query->the_post();
+        echo '<section class="featured-post">';
+                $featured_category_detail=get_the_category( get_the_ID() );//$post->ID
+                $featured_category = "";
+                foreach($featured_category_detail as $cd){
+                        $featured_category .= $cd->cat_name . " ";
+                }
+                $featured_category = str_replace('featured', '', $featured_category);
+                echo '<h2 class="feaured-post__subline">' . $featured_category . '</h2>';
+                echo '<h1 class="featured-post__headline"><a href=" ' . get_permalink() . '">' . get_the_title() . '</a></h1>';
+                echo '<p class="featured-post__excerpt">' . get_the_excerpt()  . '</p>';
+                echo '<p class="featured-post__editor">' . get_the_author()  . '</p>';
+                echo get_the_post_thumbnail();
+        echo '</section>';
+endwhile; // end have_posts()
+
 echo '<h1 class="blog-headline">fashion news</h1>';
 // Add category nav
 echo '<nav class="category-nav__wrapper"><ul class="category-nav">';
