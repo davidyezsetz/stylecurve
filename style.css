@@ -168,3 +168,7 @@ Template: avada
 #main {
   padding-top: 15px !important;
 }
+
+.search-page-search-form {
+  display: none;
+}
