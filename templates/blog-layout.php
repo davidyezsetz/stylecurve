@@ -73,7 +73,7 @@ while ( $feature_query->have_posts() ): $feature_query->the_post();
       echo '<h2 class="feaured-post__subline">' . $featured_category . '</h2>';
       echo '<h1 class="featured-post__headline"><a href=" ' . get_permalink() . '">' . get_the_title() . '</a></h1>';
       echo '<p class="featured-post__excerpt">' . get_the_excerpt()  . '</p>';
-      echo '<p class="featured-post__editor"><a href="' . get_the_author_link() . '">Editor: ' . get_the_author()  . '</a></p>';
+      echo '<p class="featured-post__editor"><a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '">Editor: ' . get_the_author()  . '</a></p>';
     echo '</div>';
     echo get_the_post_thumbnail();
   echo '</section>';
