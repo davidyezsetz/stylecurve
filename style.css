@@ -172,3 +172,29 @@ Template: avada
 .search-page-search-form {
   display: none;
 }
+
+.post-content blockquote {
+  position: relative;
+  margin: 60px 0;
+  padding: 0 0 0 50px;
+  border: 0;
+
+  background: #fff !important;
+}
+
+.post-content blockquote:before {
+  position: absolute;
+  top: -34px;
+  left: 0;
+
+  font-size: 100px;
+  font-family: "times new roman", serif;
+  content: "\201E";
+}
+
+.post-content blockquote p {
+  font-size: 23px;
+  font-family: "times new roman", serif;
+
+  background: #fff;
+}
