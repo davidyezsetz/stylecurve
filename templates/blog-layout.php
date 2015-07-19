@@ -116,7 +116,7 @@ echo sprintf( '<div id="posts-container" class="%sfusion-blog-archive fusion-cle
 		echo sprintf( '<div id="post-%s" %s>', get_the_ID(), $post_classes );
 			// Add an additional wrapper for grid layout border
       $category_detail=get_the_category( get_the_ID() );//$post->ID
-      $categories = "cat-";
+      $categories = "blog-category ";
       foreach($category_detail as $cd){
         $categories .= $cd->slug . " ";
       }
