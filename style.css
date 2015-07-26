@@ -198,3 +198,12 @@ Template: avada
 
   background: #fff;
 }
+
+/* overwrite global borde box */
+* {
+  box-sizing: padding-box;
+}
+
+.s-magazine * {
+  box-sizing: border-box;
+}
