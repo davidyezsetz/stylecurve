@@ -199,6 +199,10 @@ Template: avada
   background: #fff;
 }
 
+.fusion-header-wrapper {
+  z-index: auto;
+}
+
 /* overwrite global borde box */
 * {
   box-sizing: padding-box;
