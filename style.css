@@ -203,7 +203,7 @@ Template: avada
   z-index: auto;
 }
 
-/* overwrite global borde box */
+/* overwrite global border box */
 * {
   box-sizing: padding-box;
 }
