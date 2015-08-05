@@ -184,12 +184,16 @@ Template: avada
 
 .post-content blockquote:before {
   position: absolute;
-  top: -34px;
+  top: 0;
   left: 0;
 
+  width: 41px;
+  height: 30px;
+
+  background: url('http://h2455047.stratoserver.net/wp-content/themes/stylecurve/images/anfuehrungszeichen.png');
   font-size: 100px;
   font-family: "times new roman", serif;
-  content: "\201E";
+  content: "";
 }
 
 .post-content blockquote p {
