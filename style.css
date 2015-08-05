@@ -222,10 +222,44 @@ Template: avada
 
 .sc-previous-link,
 .sc-next-link {
+  position: relative;
+
   display: none;
+  max-width: 100px;
+
+  color: #818181;
+  font-family: arial, sans-serif;
+  font-size: 13px;
 }
 
-@media all and (min-width: 1280px) {
+.sc-previous-link a,
+.sc-next-link a {
+  color: #818181;
+  font-family: arial, sans-serif;
+  font-size: 13px;
+  transition: color .2s ease-in-out;
+}
+
+.sc-previous-link a:hover,
+.sc-next-link a:hover {
+  color: #000;
+}
+
+.sc-next-link {
+  text-align: right;
+}
+
+.sc-previous-link a:after,
+.sc-next-link a:after {
+  position: relative;
+  left: 3px;
+
+  color: inherit;
+  content: ">\0000a0";
+  font-size: 11px;
+}
+
+@media all and (min-width: 1310px) {
 
   .sc-previous-link {
     position: fixed;
