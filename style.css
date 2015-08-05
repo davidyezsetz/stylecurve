@@ -219,3 +219,27 @@ Template: avada
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+.sc-previous-link,
+.sc-next-link {
+  display: none;
+}
+
+@media all and (min-width: 1280px) {
+
+  .sc-previous-link {
+    position: fixed;
+    bottom: 25%;
+    left: 5px;
+
+    display: block;
+  }
+
+  .sc-next-link {
+    position: fixed;
+    bottom: 25%;
+    right: 5px;
+
+    display: block;
+  }
+}
