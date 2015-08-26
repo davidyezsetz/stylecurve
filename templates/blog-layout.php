@@ -50,46 +50,54 @@ if ( is_search() &&
 $feature_cat;
 switch (ICL_LANGUAGE_CODE) {
   case 'de':
-    $feature_cat = 'cat=13';
+    $feature_cat = 'tag=featured';
     break;
   case 'fr':
-    $feature_cat = 'cat=14';
+    $feature_cat = 'tag=featured-fr';
     break;
   case 'en':
-    $feature_cat = 'cat=15';
+    $feature_cat = 'tag=featured-en';
     break;
 }
-// posts_per_page
-$feature_query = new WP_Query( $feature_cat );
-while ( $feature_query->have_posts() ): $feature_query->the_post();
-  echo '<section class="featured-post">';
-    $featured_category_detail=get_the_category( get_the_ID() );//$post->ID
-    $featured_category = "";
-    foreach($featured_category_detail as $cd){
-      $featured_category .= $cd->cat_name . " ";
-    }
-    $featured_category = str_replace('featured', '', $featured_category);
-    echo '<div class="featured-post__content">';
-      echo '<h2 class="feaured-post__subline">' . $featured_category . '</h2>';
-      echo '<h1 class="featured-post__headline"><a href=" ' . get_permalink() . '">' . get_the_title() . '</a></h1>';
-      echo '<p class="featured-post__excerpt">' . get_the_excerpt()  . '</p>';
-      echo '<p class="featured-post__editor"><a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '">Editor: ' . get_the_author()  . '</a></p>';
-    echo '</div>';
-    echo get_the_post_thumbnail();
-  echo '</section>';
-endwhile; // end have_posts()
-
-echo '<h1 class="blog-headline">fashion news</h1>';
-// Add category nav
-echo '<nav class="category-nav__wrapper"><ul class="category-nav">';
-$cat_args = array('hide_empty' => 0);
-foreach(get_categories($cat_args) as $cat) {
-    if ($cat->cat_name == 'Allgemein' || $cat->cat_name == 'featured') {
-    } else {
-        echo '<li class="category-nav__entry"><a class="category-nav__link" href="' . get_category_link($cat->term_id) . '">' . $cat->cat_name . '</a></li>';
-   }
+if( is_home() ) {
+	$feature_query = new WP_Query( $feature_cat );
+	while ( $feature_query->have_posts() ): $feature_query->the_post();
+		if($feature_query->current_post === 0) {
+			echo '<section class="featured-post">';
+				$featured_category_detail=get_the_category( get_the_ID() );//$post->ID
+				$featured_category = "";
+				foreach($featured_category_detail as $cd){
+					$featured_category .= $cd->cat_name . " ";
+				}
+				$featured_category = str_replace('featured', '', $featured_category);
+				echo '<div class="featured-post__content">';
+					echo '<h2 class="feaured-post__subline">' . $featured_category . '</h2>';
+					echo '<h1 class="featured-post__headline"><a href=" ' . get_permalink() . '">' . get_the_title() . '</a></h1>';
+					echo '<p class="featured-post__excerpt">' . get_the_excerpt()  . '</p>';
+					echo '<p class="featured-post__editor"><a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '">' . __('Editor', 'stylecurve') . ': ' . get_the_author()  . '</a></p>';
+				echo '</div>';
+				echo get_the_post_thumbnail();
+			echo '</section>';
+		}
+	endwhile; // end have_posts()
 }
-echo '</ul></nav>';
+?>
+<h1 class="blog-headline"><?php _e('Latest posts', 'stylecurve'); ?></h1> 
+<?php
+if( is_home() ) {
+	// Add category nav
+	echo '<nav class="category-nav__wrapper" aria-describedby="cat-nav"><ul class="category-nav">';
+	echo '<h2 class="category-nav__headline" id="cat-nav">' . __('Filter by','stylecurve') . '</h2>';
+	echo get_search_form( $echo );
+	$cat_args = array('hide_empty' => 0);
+	foreach(get_categories($cat_args) as $cat) {
+	    if ($cat->cat_name == 'Allgemein' || $cat->cat_name == 'featured') {
+	    } else {
+		echo '<li class="category-nav__entry"><a class="category-nav__link" href="' . get_category_link($cat->term_id) . '">' . $cat->cat_name . '</a></li>';
+	   }
+	}
+	echo '</ul></nav>';
+}
 
 echo sprintf( '<div id="posts-container" class="%sfusion-blog-archive fusion-clearfix" data-pages="%s">', $container_class, $number_of_pages );
 
@@ -105,9 +113,10 @@ echo sprintf( '<div id="posts-container" class="%sfusion-blog-archive fusion-cle
 		echo '<div class="fusion-timeline-line"></div>';
 	}
 
-  // Start the main loop
-  while ( $wp_query->have_posts() ): $wp_query->the_post();
-    // Set the time stamps for timeline month/year check
+	// Start the main loop
+	//$new_query = new WP_Query( 'cat=-13,-14,-15' );
+	while ( $wp_query->have_posts() ): $wp_query->the_post();
+		// Set the time stamps for timeline month/year check
 		$alignment_class = '';
 		if( $blog_layout == 'timeline' ) {
 			$post_timestamp = get_the_time( 'U' );
@@ -148,13 +157,13 @@ echo sprintf( '<div id="posts-container" class="%sfusion-blog-archive fusion-cle
 		
 		echo sprintf( '<div id="post-%s" %s>', get_the_ID(), $post_classes );
 			// Add an additional wrapper for grid layout border
-      $category_detail=get_the_category( get_the_ID() );//$post->ID
-      $categories = "blog-category ";
-      foreach($category_detail as $cd){
-        $categories .= $cd->slug . " ";
-      }
+			$category_detail=get_the_category( get_the_ID() );//$post->ID
+			$categories = "blog-category ";
+			foreach($category_detail as $cd){
+				$categories .= $cd->slug . " ";
+			}
 			if ( $blog_layout == 'grid' ) {
-				echo '<div class="fusion-post-wrapper ' . $categories .'">';
+				echo '<div class="fusion-post-wrapper '. $categories  .'">';
 			}
 			
 				// Get featured images for all but large-alternate layout
@@ -207,9 +216,10 @@ echo sprintf( '<div id="posts-container" class="%sfusion-blog-archive fusion-cle
 							 $blog_layout == 'timeline'
 						) {
 							echo avada_render_post_metadata( 'grid_timeline' );
+
 						// Render post meta for alternate layouts
-						} elseif( $blog_layout == 'large-alternate' ||
-								  $blog_layout == 'medium-alternate'
+						} elseif( $blog_layout == 'large-alternate' || 
+								  $blog_layout == 'medium-alternate' 
 						) {
 							echo avada_render_post_metadata( 'alternate' );
 						}
@@ -225,12 +235,11 @@ echo sprintf( '<div id="posts-container" class="%sfusion-blog-archive fusion-cle
 							 *
 							 * @hooked avada_render_blog_post_content - 10 (outputs the post content wrapped with a container)
 							 */						
-            echo '<a href="' . get_permalink( get_the_ID() ) . '">';
+							echo '<a href="' . get_permalink( get_the_ID() ) . '">';
 							do_action( 'avada_blog_post_content' );
-						echo ' </a>';
+						     echo '</a>';	
 							
 						echo ' ></div>';
-				
 					echo '</div>'; // end post-content
 					
 					if( $blog_layout == 'medium' || 
@@ -322,4 +331,5 @@ if ( $smof_data['blog_pagination_type'] == 'load_more_button' ) {
 fusion_pagination( $pages = '', $range = 2 );
 
 wp_reset_query();
+
 
