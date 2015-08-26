@@ -156,3 +156,4 @@ if( ( has_post_thumbnail() || get_post_meta(get_the_ID(), 'pyre_video', true) ) 
 	</ul>
 </div>
 <?php endif; ?>
+
