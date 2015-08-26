@@ -1,12 +1,11 @@
 /*
-Theme Name: Stylecurve
-Description: Stylecurve child theme for Avada theme
-Author: David Setz
-Template: avada
-*/
+ * Theme Name: Stylecurve 
+ * Description: Stylecurve child theme for Avada theme
+ * Author: David Setz
+ * Template: avada
+ */
 .fusion-blog-layout-grid .fusion-post-wrapper {
   position: relative;
-
   border: none;
 }
 
@@ -59,16 +58,105 @@ Template: avada
   opacity: 1;
 }
 
-.the-shoot:after {
-  background-image: url('images/the-shoot.png');
+/* Category overlays */
+
+.der-trend:after {
+  background-image: url('images/der-trend_de.png');
 }
+
+.the-trend:after {
+  background-image: url('images/der-trend_en.png');
+}
+.la-tendance:after {
+  background-image: url('images/der-trend_fr.png');
+}
+
+.designer-spotlight:after,
+.designer-spotlight-en:after {
+  background-image: url('images/designer-spotlight_de_en.png');
+}
+
+.focus-createur:after {
+  background-image: url('images/designer-spotlight_fr.png');
+}
+
+.die-fotostrecke:after {
+  background-image: url('images/die-fotostrecke_de.png');
+}
+
+.the-shoot:after {
+  background-image: url('images/die-fotostrecke_en.png');
+}
+
+.la-seance-photo:after {
+  background-image: url('images/die-fotostrecke_fr.png');
+}
+
+.fashion-to-follow:after,
+.fashion-to-follow-en:after {
+  background-image: url('images/fashion-to-follow_de_en.png');
+}
+
+.mode-suivre:after {
+  background-image: url('images/fashion-to-follow_fr.png');
+}
+
+.lifestyle:after,
+.lifestyle-en:after,
+.lifestyle-fr:after {
+  background-image: url('images/lifestyle_de_en_fr.png');
+}
+
+.menschen:after {
+  background-image: url('images/Menschen_de.png');
+}
+
+.people-en:after {
+  background-image: url('images/Menschen_en.png');
+}
+
+.people:after {
+  background-image: url('images/Menschen_fr.png');
+}
+
+.so-traegt-man:after {
+  background-image: url('images/so-traegt-man_de.png');
+}
+
+.how-to-wear:after,
+.how-to-wear-en:after {
+  background-image: url('images/so-traegt-man_en_fr.png');
+}
+
+.get-the-look:after,
+.get-the-look-en:after,
+.get-the-look-fr:after {
+  background-image: url('images/get-the-look_de_en_fr.png');
+}
+
+.stilvoll-reisen:after {
+  background-image: url('images/Stilvoll-reisen_de.png');
+}
+
+.stylish-escapes:after {
+  background-image: url('images/Stilvoll-reisen_en.png');
+}
+
+.guide-de-voyage:after {
+  background-image: url('images/Stilvoll-reisen_fr.png');
+}
+
+/* Category overlay end */
 
 .fusion-load-more-button {
   margin: auto;
   width: 145px;
   height: 31px;
 
+  background: #000 !important;
   color: #fff !important;
+  font-size: 13px;
+  font-weight: 900;
   line-height: 32px;
 }
 
@@ -76,8 +164,25 @@ Template: avada
   height: 400px;
 }
 
+.searchform {
+  position: absolute;
+  top: -30px;
+  right: 20px;
+}
+
+.searchsubmit {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+.search-field .s {
+  width: 120px;
+  border: none !important;
+}
+
 .category-nav {
   display: flex;
+  position: relative;
   margin: 0 0 25px;
   padding: 20px 25px 0;
   flex-wrap: wrap;
@@ -86,6 +191,30 @@ Template: avada
   border-bottom: 2px solid #000;
 
   list-style: none;
+}
+
+.category-nav__headline {
+  position: absolute;
+  top: -27px;
+  left: 20px;
+
+  font-family: 'Verlag 8r', arial, sans-serif !important;
+  font-size: 13px !important;
+}
+
+.category-nav__headline:after {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #000;
+  transform: translateX(-50%);
+
+  content: "";
 }
 
 .category-nav__entry {
@@ -100,9 +229,9 @@ Template: avada
 .blog-headline {
   margin-bottom: 30px;
 
-  color: #000;
   font-size: 32px;
-  font-family: "times new roman" serif;
+  color: #000;
+  font-family: "Didot 06 5r", "times new roman" serif !important;
   font-weight: 100;
   text-align: center;
 }
@@ -123,27 +252,31 @@ Template: avada
     position: relative;
     z-index: 2;
     top: 10px;
-    left: 60%;
+    left: 50%;
+
+    padding-right: 20px;
+    width: 50%;
   }
 
   .featured-post__headline {
     font-size: 40px;
-    font-family: "times new roman" serif;
+    line-height: 38px;
+    font-family: "Didot 06 5r", "times new roman" serif !important;
   }
 
   .featured-post__subline {
     font-size: 21px;
-    font-family: "times new roman" serif;
+    font-family: "Didot 06 5r", "times new roman" serif !important;
   }
 
  .featured-post__excerpt {
     font-size: 16px;
-    font-family: arial, sans-serif;
+    font-family: 'Verlag 4r', arial, sans-serif !important; 
   }
 
   .featured-post__editor {
     font-size: 16px;
-    font-family: arial, sans-serif;
+    font-family: 'Verlag 4r', arial, sans-serif !important;
   }
 
   .featured-post .wp-post-image {
@@ -157,7 +290,7 @@ Template: avada
 
 @media screen and (min-width: 960px) {
   .featured-post__content {
-    top: 70px;
+    top: 40px;
   }
 }
 
@@ -173,34 +306,56 @@ Template: avada
   display: none;
 }
 
+.s-quote,
 .post-content blockquote {
   position: relative;
-  margin: 60px 0;
-  padding: 0 0 0 50px;
-  border: 0;
+  margin: 30px 0;
+  padding: 30px 0 30px 50px;
+  border-top: 2px groove #666 !important;
+  border-right: 0;
+  border-bottom: 2px groove #666 !important;
+  border-left: 0;
 
   background: #fff !important;
 }
-
+.s-quote:before,
 .post-content blockquote:before {
-  position: absolute;
-  top: 0;
+  position: absolute; 
+  top: 27px;
   left: 0;
 
   width: 41px;
   height: 30px;
-
+ 
   background: url('http://h2455047.stratoserver.net/wp-content/themes/stylecurve/images/anfuehrungszeichen.png');
   font-size: 100px;
-  font-family: "times new roman", serif;
+  font-family: "Didot 06 5r", "times new roman", serif !important;
   content: "";
 }
 
+.s-quote p,
 .post-content blockquote p {
+  margin-top: 0;
+
   font-size: 23px;
-  font-family: "times new roman", serif;
+  font-family: "Didot 06 5r", "times new roman", serif !important;
 
   background: #fff;
+}
+
+.s-quote__author {
+  display: block;
+  font-size: 13px;
+  font-family: 'Verlag 4r', arial, sans-serif !important;
+  color: #666;
+}
+
+.post-content a {
+  text-decoration: underline;
+}
+
+.post-content a:hover {
+  text-decoration: none;
 }
 
 .fusion-header-wrapper {
@@ -228,14 +383,14 @@ Template: avada
   max-width: 100px;
 
   color: #818181;
-  font-family: arial, sans-serif;
+  font-family: 'Verlag 4r', arial, sans-serif !important;
   font-size: 13px;
 }
 
 .sc-previous-link a,
 .sc-next-link a {
   color: #818181;
-  font-family: arial, sans-serif;
+  font-family: 'Verlag 4r', arial, sans-serif !important;
   font-size: 13px;
   transition: color .2s ease-in-out;
 }
@@ -244,7 +399,7 @@ Template: avada
 .sc-next-link a:hover {
   color: #000;
 }
-
+ 
 .sc-next-link {
   text-align: right;
 }
@@ -267,7 +422,7 @@ Template: avada
     left: 5px;
 
     display: block;
-  }
+  } 
 
   .sc-next-link {
     position: fixed;
@@ -275,5 +430,278 @@ Template: avada
     right: 5px;
 
     display: block;
-  }
+  } 
+}
+
+.fusion-sharing-box {
+  padding: 0;
+
+  background-color: #fff !important;
+}
+
+.sep-double {
+  border: 0 !important;
+}
+
+h1,h2 {
+  text-transform: uppercase;
+}
+
+.fusion-logo {
+  float: none;
+  text-align: center;
+}
+
+.post-content p {
+  margin-bottom: 30px;
+}
+
+/* post meta */
+.s-post-meta {
+  position: relative;
+  margin-bottom: 25px;
+
+  font-size: 13px;
+}
+
+.s-post-meta strong {
+  display: block;
+  padding-bottom: 10px;
+}
+
+.s-post-meta a {
+  text-decoration: underline;
+}
+
+.s-post-meta a:hover {
+  text-decoration: none;
+}
+
+.s-post-meta__tags,
+.s-post-meta__tags a  {
+  color: #666;
+}
+
+.s-post-meta__top {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  padding-right: 30px;
+
+  text-transform: uppercase;
+  text-decoration: none !important;
+  font-weight: 700;
+}
+ 
+.s-post-meta__top:before {
+  position: absolute;
+  right: 0;
+  top: -3px;
+  
+  width: 21px;
+  height: 21px;
+  border: 1px solid #000;
+  border-radius: 100%;
+
+  content: '';
+}
+
+.s-post-meta__top:after {
+  position: absolute;
+  top: 5px;
+  right: 6px;
+
+  width: 0;
+  height: 0;
+  border-bottom: 6px solid #000;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+
+  content: '';
+}
+
+/* sharing box */
+.fusion-sharing-box {
+  margin-top: 0 !important;
+  margin-bottom: 35px !important;
+  padding: 13px 0 5px;
+  height: auto !important;
+  border-top: 2px solid #666;
+  border-bottom: 2px solid #666;
+  overflow: hidden;
+  clear: both;
+}
+
+.fusion-sharing-box .fusion-social-networks {
+  float: left;
+
+  display: block;
+  margin-top: -1px;
+  padding: 0 !important;
+}
+
+/* like button plugin */
+.s-like-wrapper {
+  float: right;
+
+  color: #666;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.s-like-wrapper__label {
+  padding-left: 25px;
+}
+
+.likebtn-wrapper {
+  top: -2px;
+}
+
+.lb-count {
+  top: 3px !important;
+  color: #666 !important;
+  font-size: 13px !important;
+}
+
+.lb-tt.lb-share-tt {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.lb-tooltip-tt {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.lb-style-heartcross .lb-voted .lb-like-icon,
+.lb-style-heartcross .lb-voted .lb-a:hover .lb-like-icon,
+.lb-style-heartcross .lb-like-icon:hover {
+  background-image: url('images/heart.png') !important;
+}
+
+.lb-style-heartcross .lb-like-icon {
+  background-image: url('images/heart_light.png') !important;
+  background-repeat: no-repeat !important;
+  background-position: 0;
+}
+
+/* FB Comment plugin */
+.fb_iframe_widget_fluid span {
+  display: block !important;
+  margin: auto;
+  max-width: 600px;
+}
+
+/* About the author */
+.s-author {
+  display: flex;
+  align-items: center;
+  padding: 0 110px;
+}
+
+.s-author__avatar {
+  width: 39%;
+}
+
+.s-author__description {
+  margin-left: 35px;
+  width: calc(60% - 35px);
+}
+
+.s-author__head {
+  margin: 0 0 20px;
+  font-size: 21px;
+  font-family: "Didot 06 5r", "times new roman", serif !important;
+  line-height: 1;
+}
+
+.s-author__name {
+  display: block;
+
+  font-size: 40px;
+}
+
+.s-author__body {
+  margin: 0 0 25px;
+}
+
+.s-author__profile-link {
+  font-family: 'Verlag 8r', arial, sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.s-author__profile-link:after {
+  padding-left: 3px;
+
+  font-size: 12px;
+
+  content: '>\0000a0';
+}
+
+.s-author__social {
+  display: flex;
+  margin-top: 60px;
+  padding: 0 110px;
+}
+
+/* related posts */
+.related-posts {
+  margin-bottom: 55px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #666;
+}
+
+.related-posts .fusion-title {
+  display: block;
+  margin-bottom: 6px;
+
+  text-align: center;
+}
+
+.related-posts .fusion-title .title-heading-left {
+  position: relative;
+  float: none !important;
+
+  display: inline-block;
+  padding: 0;
+  
+  font-size: 40px;
+  text-transform: none;
+}
+
+.related-posts .fusion-title .title-heading-left:before,
+.related-posts .fusion-title .title-heading-left:after { 
+  position: absolute;
+  top: calc(50% + 1px);
+
+  width: 100vw;
+  height: 1px;
+
+  background: #000;
+  box-shadow: 0 -1px 1px 0 #666;
+  content: '';
+}
+
+.related-posts .fusion-title .title-heading-left:before {
+  right: 103%;
+}
+
+.related-posts .fusion-title .title-heading-left:after { 
+  left: 103%;
+}
+
+.related-posts .fusion-carousel-meta span:nth-child(2),
+.related-posts .fusion-carousel-meta span:nth-child(3) {
+  display: none;
+}
+
+/* fonts */
+body, #nav ul li ul li a, #sticky-nav ul li ul li a, .more, .avada-container h3, .meta .fusion-date, .review blockquote q, .review blockquote div strong, .project-content .project-info h4, .post-content blockquote, .fusion-load-more-button, .ei-title h3, .comment-form input[type="submit"], .wpcf7-form input[type="submit"], .gform_wrapper .gform_button, .woocommerce-success-message .button, .woocommerce .single_add_to_cart_button, .woocommerce button.button, .woocommerce .shipping-calculator-form .button, .woocommerce .checkout #place_order, .woocommerce .checkout_coupon .button, .woocommerce .login .button, .woocommerce .register .button, .fusion-page-title-bar h3, .fusion-blog-shortcode .fusion-timeline-date, #reviews #comments > h2, .fusion-image-wrapper .fusion-rollover .fusion-rollover-content .fusion-rollover-title, .fusion-image-wrapper .fusion-rollover .fusion-rollover-content .fusion-rollover-categories, .fusion-image-wrapper .fusion-rollover .fusion-rollover-content a, .fusion-image-wrapper .fusion-rollover .fusion-rollover-content .price, #wrapper #nav ul li ul li > a, #wrapper #sticky-nav ul li ul li > a, #bbp_user_edit_submit, .ticket-selector-submit-btn[type=submit], .gform_page_footer input[type=button] {
+  font-family: 'Verlag 4r', Arial, Helvetica, sans-serif !important;
+}
+
+#main .reading-box h2, #main h2, .fusion-page-title-bar h1, .fusion-image-wrapper .fusion-rollover .fusion-rollover-content .fusion-rollover-title, .fusion-image-wrapper .fusion-rollover .fusion-rollover-content .fusion-rollover-title a, #main .post h2, .sidebar .widget h3, #wrapper .fusion-tabs-widget .tab-holder .tabs li a, .share-box h4, .project-content h3, .fusion-author .fusion-author-title, .fusion-pricing-table .title-row, .fusion-pricing-table .pricing-row, .fusion-person .person-desc .person-author .person-author-wrapper, .fusion-accordian .panel-title, .fusion-accordian .panel-heading a, .fusion-tabs .nav-tabsli .fusion-tab-heading, .fusion-carousel-title, .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6, .ei-title h2, table th, .project-content .project-info h4, .woocommerce-success-message .msg, .product-title, .cart-empty, .main-flex .slide-content h2, .main-flex .slide-content h3, .fusion-modal .modal-title, .popover .popover-title, .fusion-flip-box .flip-box-heading-back, .fusion-header-tagline {
+  font-family: 'Didot 06 5r', 'Times New Roman', Times, serif !important;
 }
